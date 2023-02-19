@@ -4,74 +4,9 @@
 
 // book class
 import Book from './modules/book.js'
-  
-  // UI class
-  class UI {
-    static displayBooks() {
-      const books = Store.getBooks();
-  
-      books.forEach((book) => UI.addBookToList(book));
-    }
-  
-    static addBookToList(book) {
-      const list = document.querySelector('.table-body');
-  
-      const tableRow = document.createElement('tr');
-  
-      tableRow.innerHTML = `
-             <td>${book.title}</td>
-             <td class= "td-by">  By ${book.author}</td>
-             <td ><a href="#" class="remove-btn">Remove</a></td>
-          `;
-  
-      list.appendChild(tableRow);
-    }
-  
-    static empty() {
-      document.querySelector('.title').value = '';
-      document.querySelector('.author').value = '';
-    }
-  
-    static deleteBook(e) {
-      if (e.classList.contains('remove-btn')) {
-        e.parentElement.parentElement.remove();
-      }
-    }
-  }
-  
-  class Store {
-    static getBooks() {
-      let books;
-      if (localStorage.getItem('books') === null) {
-        books = [];
-      } else {
-        books = JSON.parse(localStorage.getItem('books'));
-      }
-      localStorage.getItem('books');
-      return books;
-    }
-  
-    static addBook(book) {
-      const books = Store.getBooks();
-  
-      books.push(book);
-  
-      localStorage.setItem('books', JSON.stringify(books));
-    }
-  
-    static removeBook(title) {
-      const books = Store.getBooks();
-  
-      books.forEach((book, index) => {
-        if (book.title === title) {
-          books.splice(index, 1);
-        }
-      });
-  
-      localStorage.setItem('books', JSON.stringify(books));
-    }
-  }
-  
+import UI from './modules/UI.js'
+import Store from './modules/store.js'
+
   // event:Display books
   document.addEventListener('DOMContentLoaded', UI.displayBooks);
   
