@@ -3,12 +3,7 @@
 /* eslint-disable max-len */
 
 // book class
-class Book {
-    constructor(title, author) {
-      this.title = title;
-      this.author = author;
-    }
-  }
+import Book from './modules/book.js'
   
   // UI class
   class UI {
