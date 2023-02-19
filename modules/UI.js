@@ -1,13 +1,13 @@
 import Store from './store.js';
 
 export default class UI {
-  static displayBooks() {
+  static displayBooks = () => {
     const books = Store.getBooks();
 
     books.forEach((book) => UI.addBookToList(book));
   }
 
-  static addBookToList(book) {
+  static addBookToList = (book) => {
     const list = document.querySelector('.table-body');
 
     const tableRow = document.createElement('tr');
@@ -21,12 +21,12 @@ export default class UI {
     list.appendChild(tableRow);
   }
 
-  static empty() {
+  static empty = () => {
     document.querySelector('.title').value = '';
     document.querySelector('.author').value = '';
   }
 
-  static deleteBook(e) {
+  static deleteBook = (e) => {
     if (e.classList.contains('remove-btn')) {
       e.parentElement.parentElement.remove();
     }
