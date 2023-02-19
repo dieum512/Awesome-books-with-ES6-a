@@ -40,13 +40,17 @@ body {
     flex-direction: row;
     float: right;
     gap: 30px;
-  
-    /* align-items: center; */
   }
   
   .nav-list li {
     cursor: pointer;
     color: #fff;
+  }
+
+  .date {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 5%;
   }
   
   tr {
