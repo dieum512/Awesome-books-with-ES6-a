@@ -34,7 +34,7 @@ document.querySelector('.table-body').addEventListener('click', (e) => {
   Store.removeBook(e.target.parentElement.previousElementSibling.previousElementSibling.textContent);
 });
 
-// date
+// date and time
 const currentDate = document.querySelector('.date');
 
 const date = DateTime.local();
