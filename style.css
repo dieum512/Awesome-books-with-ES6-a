@@ -1,5 +1,14 @@
+html,
 body {
-  background-color: rgb(167, 171, 175);
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-image: url('./Images/background.jpeg');
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: top right;
 }
 
 .tables {
@@ -25,13 +34,13 @@ body {
 .nav-bar-list {
   background-color: #4949d4;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   border: #000;
   position: relative;
   padding: 0 5%;
   height: 50px;
   align-items: center;
+  opacity: 0.9;
 }
 
 .nav-list {
@@ -57,6 +66,7 @@ tr {
   border: 1px solid #000;
   height: 40px;
   background-color: rgb(199, 193, 193);
+  opacity: 0.8;
 }
 
 td {
@@ -71,7 +81,6 @@ td {
   text-decoration: none;
   float: right;
   padding: 3px;
-  margin-right: 5%;
 }
 
 .remove-btn:hover {
@@ -167,9 +176,14 @@ footer {
   align-items: center;
   justify-content: center;
   color: #fff;
+  opacity: 0.9;
 }
 
 @media (min-width: 790px) {
+  body {
+    background-size: cover;
+  }
+
   .submit-btn {
     width: 20%;
     position: relative;
